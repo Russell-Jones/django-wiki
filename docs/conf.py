@@ -1,5 +1,5 @@
-from __future__ import print_function
 # -*- coding: utf-8 -*-
+from __future__ import print_function, unicode_literals
 #
 # django-wiki documentation build configuration file, created by
 # sphinx-quickstart on Mon Jul 23 16:13:51 2012.
@@ -41,8 +41,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'django-wiki'
-copyright = u'2013, Benjamin Bach'
+project = 'django-wiki'
+copyright = '2013, Benjamin Bach'
 
 
 path = os.path.join(
@@ -109,6 +109,12 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'default'
+
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if on_rtd:
+    html_theme = 'default'
+else:
+    html_theme = 'nature'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -200,8 +206,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'django-wiki.tex', u'django-wiki Documentation',
-   u'Benjamin Bach', 'manual'),
+  ('index', 'django-wiki.tex', 'django-wiki Documentation',
+   'Benjamin Bach', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -230,8 +236,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'django-wiki', u'django-wiki Documentation',
-     [u'Benjamin Bach'], 1)
+    ('index', 'django-wiki', 'django-wiki Documentation',
+     ['Benjamin Bach'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -244,8 +250,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'django-wiki', u'django-wiki Documentation',
-   u'Benjamin Bach', 'django-wiki', 'One line description of project.',
+  ('index', 'django-wiki', 'django-wiki Documentation',
+   'Benjamin Bach', 'django-wiki', 'One line description of project.',
    'Miscellaneous'),
 ]
 
